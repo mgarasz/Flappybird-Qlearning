@@ -38,7 +38,13 @@ In total, there exists 72051 possible states. Horizontal movement is constant as
 
 ## Q-Matrix
 Due to the large number of states (72051), it is impractical to enumerate the full Q-matrix here. As mentioned earlier, to reduce the number of states binning was applied in buckets of 10 for horizontal and vertical distances. The Q-matrix was stored in a dictionary variable where each key corresponds to one possible combination of velocity and horizontal and vertical distances. Below is an illustration of how a typical learning cycle follows and how states are conceptualized:
-Figure 1: A typical learning cycle and an illustration of the Q-matrix states.
+
+![Learning cycle and states](https://imgur.com/EFFKJlH.jpg)
+
+Figure 1: A typical learning cycle and an illustration of the Q-matrix states. <br />
+
+
+
 While the state space is vast, the constant decrease in horizontal distance (xdiff) due to the side-scrolling nature of the game makes it easier to conceptualize state transition options. Every gametick, the agent progresses forward 10 pixels towards the upcoming pipe, during which the state is observed to determine whether the agent is alive or dead. The agent then has the two options (jump or do nothing) that will increase ydiff by 10 (maximum upward velocity) or decrease it according to the current negative velocity. A list of actions (history) is recorded as well as the corresponding states. It is only after the agent has died that the Q-matrix is updated using this list. The update equation is the standard Q-learning algorithm:
 
 
