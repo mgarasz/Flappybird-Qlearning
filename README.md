@@ -68,3 +68,22 @@ Finally, examining the impact of changing discount factors, two agents were comp
 Across most parameter variations, each agent underwent a period where it would exhibit a high number of deaths due to overshooting (jumping too high), and diverge from a previously higher average performance. After approximately 2000 more episodes, performance sharply increased with no prior indication of gradual improvement. This phenomena was not observed in agents with a very low learning rate, leading to the speculation that whatever state/action relationship was learned to cause such a dramatic increase in performance was one that required extremely fine changes in behaviour. Low learning rate agents also did not suffer from overshooting the optimum because of gradual changes and improvements to the Q-matrix, rather than large leaps.
 
 ![Overshoot Period](https://imgur.com/iiB1P8K.jpg)
+
+## Learning-rate Decay Scheduler
+It is intuitive to have the agent take larger leaps during the early learning process, whereas in later episodes to make smaller changes to learned behaviours. In an attempt to facilitate this, a decay scheduler was implemented that would decrease the learning rate at some rate as episode count increases. Two main decay schedules were examined: fixed and step-wise. Fixed decay would result in a decrease of 0.15 in learning rate every 1000 episodes, whereas step-wise would halve the learning rate every 1000 episodes (similar to exponential, albeit less continuously updated).
+
+![Decay scheduler](https://imgur.com/uwZIbD9.jpg)
+
+The results were surprising in that a step-wise decay scheduler had led to an earlier increase in performance, albeit with a lower average score upon convergence. It is speculated that the sufficiently small learning rate (0.4) starting at episode 1000 helped the agent avoid the overshoot learning period. However, it is arguable that the monotonic decay rate with regards to step-wise scheduler may be too aggressive, as it converged to an unsatisfactory score. Perhaps in future iterations of such an agent, an adaptive learning rate scheduler (increase or decrease depending on on-the-fly performance metrics) should be considered.
+
+## References
+6 REFERENCES
+Ceyhan, C., Flappybird-qlearning-bot, (2017), GitHub repository, https://github.com/chncyhn/flappybird-qlearning-bot <br />
+Corriea, A. (2014). Flappy Bird collects $50K per day in ad revenue. [online] Polygon. Available at: https://www.polygon.com/2014/2/6/5385880/flappy-bird-collects-50k-per-day-in-ad-revenue <br />
+Dredge, S. (2014). Flappy Bird at risk of extinction as developer 'cannot take this anymore'. [online] the Guardian. Available at: https://www.theguardian.com/technology/2014/feb/08/flappy-bird-dong-nguyen-deleting <br />
+Gibbs, S. (2014). 'Flappy Bird phones' on sale on eBay from $300 to $90,000. [online] the Guardian. Available at: https://www.theguardian.com/technology/2014/feb/10/phones-flappy-bird-ebay-app-store <br />
+Lau, S. (2017). Learning Rate Schedules and Adaptive Learning Rate Methods for Deep Learning. [online] Towards Data Science. Available at: https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1 [Accessed 7 Apr. 2018].<br />
+Poerio, T., Flappy-AI, (2016), GitHub repository, https://github.com/adpoe/Flappy-AI <br />
+Quinn, M. and Reis, G. Automatic Flappy Bird Player, (2017), Standford, https://web.stanford.edu/class/cs221/2017/restricted/p-final/greis/final.pdf <br />
+Sourabh, V., FlapPyBird, (2014), GitHub repository, https://github.com/sourabhv/FlapPyBird<br />
+Vaish S., FlappyBirdRL, (2014), GitHub repository, https://github.com/SarvagyaVaish/FlappyBirdRL <br />
