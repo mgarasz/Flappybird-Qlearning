@@ -1,4 +1,4 @@
-# Flappybird-Qlearning
+# Flappybird Q-Learning with variable LR and tunable epsilon
 Extension of Sarvagya Vaish (2014), Cihan Ceyhan’s (2017) and Tony Poerio’s (2016) Flappy Bird Q learning implementations. 
 
 Ceyhan, C., Flappybird-qlearning-bot, (2017), GitHub repository, https://github.com/chncyhn/flappybird-qlearning-bot<br />
