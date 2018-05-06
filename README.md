@@ -41,7 +41,7 @@ Due to the large number of states (72051), it is impractical to enumerate the fu
 
 ![Learning cycle and states](https://imgur.com/EFFKJlH.jpg)
 
-Figure 1: A typical learning cycle and an illustration of the Q-matrix states. <br />
+#### Figure 1: A typical learning cycle and an illustration of the Q-matrix states. <br />
 
 
 
@@ -51,5 +51,18 @@ While the state space is vast, the constant decrease in horizontal distance (xdi
 ![Standard Q-Learning Equation](https://imgur.com/fgt2Pgr.jpg)
 
 
-## Learning-rate Decay Scheduler
-It is intuitive to have the agent take larger leaps during the early learning process, whereas in later episodes to make smaller changes to learned behaviours. In an attempt to facilitate this, a decay scheduler was implemented that would decrease the learning rate at some rate as episode count increases. Two main decay schedules were examined: fixed and step-wise. Fixed decay would result in a decrease of 0.15 in learning rate every 1000 episodes, whereas step-wise would halve the learning rate every 1000 episodes (similar to exponential, albeit less continuously updated).
+
+
+# RESULTS AND ANALYSIS
+## Quantitative Analysis
+To evaluate performance, the agent completed thousands of episodes (up until convergence or significant point of interest) with different parameter values, one at a time whilst keeping the remaining parameters constant. Firstly, learning rate had a significant impact on overall performance, namely average score where convergence occurred. As expected, a lower learning rate would result in delayed convergence. Surprisingly, in addition to faster convergence, a high learning rate (0.8) led to a significantly higher average score. The top score was 1210 points (alpha=0.8).
+
+Examining the effects of introducing an exploring element (epsilon) into the early learning process, it was found that epsilon of any value higher than 0 would hinder the agent even after it was reduced to zero (episode 500). It is speculated that this may be a consequence of the agent investing too heavily in a sub-optimal state-reward association learned during this early phase.
+
+![Comparing LRs](https://imgur.com/dIf3glm.jpg)
+
+
+Finally, examining the impact of changing discount factors, two agents were compared different gamma values, while holding the remaining parameters constant. The results are consistent with the notion that due to the random spawning of pipes, the agent cannot advantageously plan beyond a short time horizon.
+
+## Qualitative Analysis
+Across most parameter variations, each agent underwent a period where it would exhibit a high number of deaths due to overshooting (jumping too high), and diverge from a previously higher average performance. After approximately 2000 more episodes, performance sharply increased with no prior indication of gradual improvement. This phenomena was not observed in agents with a very low learning rate, leading to the speculation that whatever state/action relationship was learned to cause such a dramatic increase in performance was one that required extremely fine changes in behaviour. Low learning rate agents also did not suffer from overshooting the optimum because of gradual changes and improvements to the Q-matrix, rather than large leaps.
