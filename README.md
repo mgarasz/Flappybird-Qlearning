@@ -7,8 +7,8 @@ Poerio, T., Flappy-AI, (2016), GitHub repository, https://github.com/adpoe/Flapp
 
 Sarvagya V., FlapPyBird, (2014), GitHub repository, https://github.com/SarvagyaVaish/FlappyBirdRL
 
-
-
+<br />
+<br />
 
 
 
