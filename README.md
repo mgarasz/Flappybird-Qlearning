@@ -77,7 +77,6 @@ It is intuitive to have the agent take larger leaps during the early learning pr
 The results were surprising in that a step-wise decay scheduler had led to an earlier increase in performance, albeit with a lower average score upon convergence. It is speculated that the sufficiently small learning rate (0.4) starting at episode 1000 helped the agent avoid the overshoot learning period. However, it is arguable that the monotonic decay rate with regards to step-wise scheduler may be too aggressive, as it converged to an unsatisfactory score. Perhaps in future iterations of such an agent, an adaptive learning rate scheduler (increase or decrease depending on on-the-fly performance metrics) should be considered.
 
 ## References
-6 REFERENCES
 Ceyhan, C., Flappybird-qlearning-bot, (2017), GitHub repository, https://github.com/chncyhn/flappybird-qlearning-bot <br />
 Corriea, A. (2014). Flappy Bird collects $50K per day in ad revenue. [online] Polygon. Available at: https://www.polygon.com/2014/2/6/5385880/flappy-bird-collects-50k-per-day-in-ad-revenue <br />
 Dredge, S. (2014). Flappy Bird at risk of extinction as developer 'cannot take this anymore'. [online] the Guardian. Available at: https://www.theguardian.com/technology/2014/feb/08/flappy-bird-dong-nguyen-deleting <br />
