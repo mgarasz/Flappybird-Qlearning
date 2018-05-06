@@ -11,7 +11,7 @@ Sarvagya V., FlapPyBird, (2014), GitHub repository, https://github.com/SarvagyaV
 
 ### Abstract
 This project attempts to apply a standard Q-Learning algorithm to a Flappy Bird playing agent. 
-The agent was demonstrated to successfully learn to play the game at a superhuman level following a pure-greedy. 
+The agent was demonstrated to successfully learn to play the game at a superhuman level following a pure-greedy (e=0) policy. 
 Modular adjustments were made to the learning rate to investigate whether a decay scheduler would improve performance.
 
 
