@@ -66,3 +66,5 @@ Finally, examining the impact of changing discount factors, two agents were comp
 
 ## Qualitative Analysis
 Across most parameter variations, each agent underwent a period where it would exhibit a high number of deaths due to overshooting (jumping too high), and diverge from a previously higher average performance. After approximately 2000 more episodes, performance sharply increased with no prior indication of gradual improvement. This phenomena was not observed in agents with a very low learning rate, leading to the speculation that whatever state/action relationship was learned to cause such a dramatic increase in performance was one that required extremely fine changes in behaviour. Low learning rate agents also did not suffer from overshooting the optimum because of gradual changes and improvements to the Q-matrix, rather than large leaps.
+
+![Overshoot Period](https://imgur.com/iiB1P8K.jpg)
