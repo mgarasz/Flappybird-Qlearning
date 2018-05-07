@@ -16,7 +16,7 @@ Modular adjustments were made to the learning rate to investigate whether a deca
 
 
 # METHODOLOGY
-Libraries and Contributors
+## Libraries and Contributors
 The infrastructure for this project consisted of using the PyGame library, as well as pre-built Flappy Bird environment to which the agent would send commands (Sourabh, 2014). This project was inspired by Sarvagya Vaish’s (2014) outline of a Flappy Bird playing agent, with parts of the code used from Cihan Ceyhan’s (2017) and Tony Poerio’s (2016) Flappy Bird implementation. 
 
 ## Domain
